@@ -1,0 +1,15 @@
+# cart_items
+  # 1.dishes
+  # 2.price
+  # 3.
+
+# orders
+  # 1.customer id
+  # 2.restaurant id
+  # 3.customer add id
+  # 4.driver id
+  # 5.order date
+  # 4.dilivery fee
+  # 5.total Amount
+  # 4.order stauts id
+  # 5.payment id 

@@ -1,0 +1,20 @@
+<h1>Restaurant Cuisines</h1>
+<ul>
+  <%= form_tag cart_items_path, method: :post do  %>
+    <% @dishes.each do |dish| %>
+      <div class="dish-fields">
+      <label> Dish Name:</label> <%= dish.name %><br>
+      <label> Dish Price:</label> <%= dish.price %><br>
+      <label> Dish Quantity:</label> <%= number_field_tag "selected_dishes[][quantity]" %>
+      <%= hidden_field_tag "selected_dishes[][dish_name]", dish.name %>
+      <%= hidden_field_tag "selected_dishes[][price]", dish.price %><br>
+      <%= hidden_field_tag "selected_dishes[][dish_id]", dish.id %><br>
+      <label>Add in Cart </label>
+        <%= check_box_tag "selected_dishes[][check]", true %><br>
+      </div>
+    <% end %>
+    <%= submit_tag 'Create Cart Item' %>
+  <% end %>
+</ul>
+
+

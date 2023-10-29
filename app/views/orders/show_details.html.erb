@@ -1,0 +1,52 @@
+<!-- Initialize a variable to store the total price -->
+<% total_price = 0 %>
+
+<h1>Order Details</h1>
+
+<h2>Customer Information:</h2>
+<p>Name: <%= @customer.username %></p>
+
+<h2>Cart Items:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Dish Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= cart_item.dish_name %></td>
+        <td><%= cart_item.price %></td>
+        <td><%= cart_item.quantity %></td>
+        <!-- Calculate the subtotal for each item and display it -->
+        <% subtotal = cart_item.price * cart_item.quantity %>
+        <td><%= subtotal %></td>
+        <!-- Add the subtotal to the total_price variable -->
+        <% total_price += subtotal %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- Display the total price for all dishes -->
+<p>Total Price: <%= total_price %></p>
+
+
+<!-- Stripe Payment Form -->
+<%= form_tag charges_path do %>
+  <label class="amount">
+  <p>Total Price: <%= total_price %></p>
+  </label>
+
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="A month's subscription"
+    data-amount=total_price
+    data-locale="auto">
+  </script>
+<% end %>

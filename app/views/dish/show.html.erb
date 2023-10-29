@@ -1,0 +1,6 @@
+<!-- app/views/restaurant_cuisines/show.html.erb -->
+
+<h1>Cuisine: <%= @restaurant_cuisine.cuisine.name %></h1>
+<p>Restaurant: <%= @restaurant_cuisine.restaurant.name %></p>
+
+<%= link_to "View Dishes", restaurant_cuisine_dishes_path(@restaurant_cuisine) %>

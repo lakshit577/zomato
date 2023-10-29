@@ -1,0 +1,79 @@
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .field {
+    margin-bottom: 15px;
+  }
+  
+
+  .field label {
+    font-weight: bold;
+    display: block;
+  }
+  
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+
+
+  h2{
+    color: #007bff; /* Change the color to your preference */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease; /* Add an animation */
+  }
+  
+
+
+  div {
+    text-align: center;
+  }
+  
+ div input[type="submit"] {
+    background-color: #007bff; /* Change the color to your preference */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  div input[type="submit"]:hover {
+    background-color: #0056b3; 
+  }
+  
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+  

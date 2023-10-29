@@ -1,0 +1,16 @@
+
+
+
+
+<h1>Cart Item Details</h1>
+<p><%= @customer_name %></p>
+
+<% @cart_items.each do |cart_item| %>
+  <p>Name: <%= cart_item.dish_name %></p>
+  <p>Price: <%= cart_item.price %></p>
+  <p>Quantity: <%= cart_item.quantity %></p>
+  <hr> <!-- Add a horizontal line to separate each cart item -->
+<% end %>
+
+<br><br>
+<%= link_to 'Place Order', show_details_order_path(@customer) %>

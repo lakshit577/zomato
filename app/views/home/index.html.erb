@@ -1,0 +1,31 @@
+<!-- views/home/index.html.erb -->
+
+<% if customer_signed_in? %>
+  <div class="welcome-box">
+    <h2 class="welcome-heading">Welcome <%= current_customer.username %></h2>
+  </div>
+<% else %>
+  <%= button_to "Sign in", new_customer_session_path, class: "sign-in-button" %>
+<% end %>
+
+<h2 class="restaurants-heading">Restaurants List</h2>
+<div>
+
+  <% @restaurants.each do |restaurant| %>
+    
+      <h2><%= restaurant.name %></h2>
+      <p>Opening hours: <%= restaurant.opening_hours %></p>
+      <p>Rating: <%= restaurant.rating %></p>
+      <p>Contact number: <%= restaurant.contact_number %></p>
+    
+      <% restaurant.restaurant_cuisines.each do |rest_cuisine| %>
+        <li>
+          <%= link_to rest_cuisine.cuisine.name, dishes_path(id: rest_cuisine.id) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+</div>
+<%= button_to "Sign out", destroy_customer_session_path, method: :delete, class: "sign-out-button" %>
+<%= stylesheet_link_tag 'custom' %> <!-- Link the custom.css stylesheet -->

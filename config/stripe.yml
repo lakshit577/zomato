@@ -1,0 +1,7 @@
+development:
+  stripe_publishable_key: your_development_publishable_key
+  stripe_secret_key: your_development_secret_key
+
+production:
+  stripe_publishable_key: your_production_publishable_key
+  stripe_secret_key: your_production_secret_key
